@@ -3,30 +3,26 @@
 article = str(input("Enter the article name: "))
 
 def price_required():
-    price = float(input("Enter the price of the item: "))
-    while price <= 0:
-        try:
-            if price <= 0:
-                print("try again")
-                return price_required()
-        except ValueError:
+    try:
+        price = float(input("Enter the price of the item: "))
+
+        if price <= 0:
             print("try again")
+            return price_required()
+    except ValueError:
+        print("try again")
         return price_required()
     return price
 
 
-
-
-
 def required_quantity():
-    amount = int(input("Enter the amount: "))
-    while amount <= 0:
-        try:
-            if amount <= 0:
-                print("try again")
-                return required_quantity()
-        except ValueError:
+    try:
+        amount = int(input("Enter the amount: "))
+        if amount <= 0:
             print("try again")
+            return required_quantity()
+    except ValueError:
+        print("try again")
         return required_quantity()
     return amount
 
